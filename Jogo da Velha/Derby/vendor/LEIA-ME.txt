@@ -1,0 +1,2 @@
+Bootstrap 5.3.6 - licenciado sob MIT. https://getbootstrap.com/
+Os avisos de direitos autorais e licenças estão preservados nos arquivos minificados.

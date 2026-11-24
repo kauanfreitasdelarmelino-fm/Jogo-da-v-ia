@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jogo da velha clássico com Bootstrap, páginas informativas e carrossel.">
+  <title>All Games | Jogo da Velha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top">
+    <div class="container py-1">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-logo" aria-hidden="true"><b>X</b><b>O</b></span>
+        <span class="brand-name">All Games</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir navegação"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="pages/historia.html">História</a></li>
+          <li class="nav-item"><a class="nav-link " href="pages/dicas.html">Dicas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="principal">
+  <div class="container" id="container-top">
+    <div class="row g-4 align-items-start">
+      <section class="col-12 col-md-6 game-column" aria-labelledby="titulo-jogo">
+        <h1 class="section-heading" id="titulo-jogo">Jogo da velha</h1>
+        <div class="board" id="board" role="group" aria-label="Tabuleiro de jogo da velha">
+<button class="cell" type="button" data-index="0" aria-label="Linha 1, coluna 1, vazio"></button>
+<button class="cell" type="button" data-index="1" aria-label="Linha 1, coluna 2, vazio"></button>
+<button class="cell" type="button" data-index="2" aria-label="Linha 1, coluna 3, vazio"></button>
+<button class="cell" type="button" data-index="3" aria-label="Linha 2, coluna 1, vazio"></button>
+<button class="cell" type="button" data-index="4" aria-label="Linha 2, coluna 2, vazio"></button>
+<button class="cell" type="button" data-index="5" aria-label="Linha 2, coluna 3, vazio"></button>
+<button class="cell" type="button" data-index="6" aria-label="Linha 3, coluna 1, vazio"></button>
+<button class="cell" type="button" data-index="7" aria-label="Linha 3, coluna 2, vazio"></button>
+<button class="cell" type="button" data-index="8" aria-label="Linha 3, coluna 3, vazio"></button>
+        </div>
+        <div class="status text-center mt-3" role="status" id="status" aria-live="polite">É a vez do jogador <strong class="mark-x">X</strong></div>
+        <div class="text-center mt-3 d-flex flex-wrap justify-content-center gap-2">
+          <button class="btn btn-primary btn-lg" type="button" id="reset-button">Reiniciar</button>
+          <button class="btn btn-outline-primary btn-lg" type="button" id="reset-score">Zerar placar</button>
+        </div>
+        <div class="scoreboard row g-2 mt-3 mx-auto" aria-label="Placar das partidas">
+          <div class="col-4"><div class="score-box"><div class="score-label">Jogador <b class="mark-x">X</b></div><span class="score-num" id="score-x">0</span></div></div>
+          <div class="col-4"><div class="score-box"><div class="score-label">Empates</div><span class="score-num" id="score-draw">0</span></div></div>
+          <div class="col-4"><div class="score-box"><div class="score-label">Jogador <b class="mark-o">O</b></div><span class="score-num" id="score-o">0</span></div></div>
+        </div>
+      </section>
+
+      <section class="col-12 col-md-6 slide-column" aria-labelledby="titulo-slider">
+        <h2 class="section-heading" id="titulo-slider">Slide Show</h2>
+        <div id="slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500" aria-label="Carrossel do jogo">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active aura-fogo">
+              <div class="slide-visual" aria-hidden="true"><span class="big-letter float-x">X</span><span class="vs">VS</span><span class="big-letter float-o">O</span></div>
+              <div class="carousel-caption"><h3>Jogo clássico</h3><p>O duelo de X e O</p><a class="btn btn-primary" href="pages/historia.html">Conhecer a história</a></div>
+            </div>
+            <div class="carousel-item aura-agua">
+              <div class="slide-visual" aria-hidden="true"><div class="three-in-row"><span>X</span><span>X</span><span>X</span></div></div>
+              <div class="carousel-caption"><h3>Três em linha!</h3><p>Horizontal, vertical ou diagonal</p><a class="btn btn-primary" href="pages/dicas.html">Veja as dicas</a></div>
+            </div>
+            <div class="carousel-item aura-verde">
+              <div class="slide-visual" aria-hidden="true"><div class="mini-board"><span>X</span><span>O</span><span>X</span><span>O</span><span>O</span><span>X</span><span>O</span><span>X</span><span>O</span></div></div>
+              <div class="carousel-caption"><h3>Desafie alguém</h3><p>Raciocínio e diversão</p><a class="btn btn-primary" href="#board">Vamos jogar</a></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev" aria-label="Slide anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next" aria-label="Próximo slide"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+        </div>
+        <div class="quick-info mt-3"><b>Como jogar?</b> Faça uma sequência de três X ou três O para vencer. Os jogadores se alternam a cada jogada.</div>
+      </section>
+
+      <section class="col-12 mb-4" aria-label="Informações do projeto">
+        <div class="card info-card">
+          <div class="card-body">
+            <h2 class="card-title h5">Sobre o projeto</h2>
+            <p class="card-text">Jogo da Velha clássico, criado para praticar HTML, CSS, JavaScript e Bootstrap.</p>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <a class="btn btn-primary" href="pages/historia.html">Saiba mais</a>
+              <span class="ms-sm-2 tech-tags">HTML &nbsp; CSS &nbsp; JavaScript &nbsp; Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-footer text-center py-3"><small>All Games • Projeto escolar</small></footer>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/myscript.js"></script>
+</body></html>
